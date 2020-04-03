@@ -7,38 +7,45 @@
     
     <script src="https://code.jquery.com/pep/0.4.2/pep.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.2/dat.gui.min.js"></script>
-    <script src="https://d3js.org/d3.v5.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    
+    <style>
+        
+.graph-container{
+height: 200;
+}
+.myChart{
+    width: 400; 
+    height: 400
+}
+    </style>
 </head>
 
 <body>
-    <h1>Check Console log for data</h1>
+    <div class="graph-container">
+        <canvas id="myChart"></canvas>
+    </div>
+    
     <script>
-        d3.csv(" ./data/csse_covid_19_data/csse_covid_19_daily_reports/03-29-2020.csv", function (d) {
-            return {
-                FIPS: d.FIPS,
-                Confirmed: d.Confirmed,
-            };
-        }, function (error, rows) {
-            console.log(error);
-            console.log(rows[0]);
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+                // The data for our dataset
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: [0, 10, 5, 2, 20, 30, 45]
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
         });
-
-        // FileAttachment("03-29-2020.csv").text()
-
-        // d3.csvParse(await FileAttachment("03-29-2020.csv").text())
-
-        // data = {
-        //         const text = await FileAttachment("03-29-2020.csv").text();
-        //         // const parseDate = d3.utcParse("%Y-%m-%d");
-        //         return d3.csvParse(text, ({ FIPS, Confirmed }) => ({
-        //             FIPS: +FIPS,
-        //             Confirmed: +Confirmed
-        //         }));
-        //     }
-        //     d3.extent(data, d => d.FIPS)
-
-        //     d3.extent(data, d => d.confirmed) //undefined
     </script>
 </body>
 </html>
