@@ -14,13 +14,7 @@
         color: white;
         background-color: black;
     }
-    .graph-container{
-    height: 200;
-    }
-    .myChart{
-        width: 400; 
-        height: 400
-    }
+
     </style>
 
 </head>
@@ -29,6 +23,10 @@
     <div class="graph-container">
         <canvas id="myChart"></canvas>
     </div>
+    <br>
+    <br>
+    <br>
+
     <div class="graph-container2">
         <canvas id="myChart2"></canvas>
     </div>
@@ -39,39 +37,40 @@
             var chart = new Chart(ctx, {
             // The type of chart we want to create
             type: 'line',
-
-            // The data for our dataset
             data: {
-                labels: ['3/13/2020', '3/14/2020', '3/15/2020', '3/16/2020', '3/17/2020', '3/18/2020', '3/19/2020', '3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020', '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020'],
+                labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020', '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020'],
                 datasets: [
                     {
                         label: 'COVID-19 confirmed cases El Paso, TX & Las Cruces, NM',
+                        tension: '.1',
                         // backgroundColor: 'rgb(85,0,0)',
-                        borderColor: 'rgb(85,0,0)',
-                        pointRadius: '.75',
-                        data: [1, 1, 2, 2, 2, 3, 6, 7, 8, 10, 16, 25, 25, 41, 46, 52, 57, 65, 68, 71, 97]
+                        borderColor: 'rgb(255, 128, 0)',
+                        data: [7, 8, 10, 16, 25, 25, 41, 46, 52, 57, 65, 68, 71, 97]
                     },
                     {
                         label: 'COVID-19 confirmed cases Austin, TX',
+                        tension: '.1',
                         // backgroundColor: 'rgb(254,228,110)',
                         borderColor: 'rgb(254,228,110)',
-                        pointRadius: '.75',
-                        data: [4, 5, 7, 7, 7, 13, 20, 38, 78, 95, 100, 113, 149, 175, 209, 212, 235, 266, 279, 346, 470]
+                        // pointRadius: '.75',
+                        data: [38, 78, 95, 100, 113, 149, 175, 209, 212, 235, 266, 279, 346, 470]
                     },
                     {
                     label: 'COVID-19 confirmed Houston, TX',
+                    tension: '.1',
                     // backgroundColor: 'rgb(46,76,157)',
                     borderColor: 'rgb(46,76,157)',
-                    pointRadius: '.75',
-                    data: [21, 22, 24, 26, 31, 50, 65, 95, 119, 139, 164, 223, 303, 378, 459, 693, 831, 894, 1064, 1315, 1512]
+                    // pointRadius: '.75',
+                    data: [95, 119, 139, 164, 223, 303, 378, 459, 693, 831, 894, 1064, 1315, 1512]
                 },
-                                {
-                        label: 'COVID-19 confirmed cases Dallas/ Fort Worth, TX',
-                        // backgroundColor: 'rgb(3,133,62)',
-                        borderColor: 'rgb(3,133,62)',
-                        pointRadius: '.75',
-                        data: [16, 22, 27, 28, 40, 60, 106, 140, 202, 247, 304, 325, 376, 580, 735, 853, 911, 1055, 1219, 1371, 1669]
-                    },]
+                {
+                    label: 'COVID-19 confirmed cases Dallas/ Fort Worth, TX',
+                    tension: '.1',
+                    // backgroundColor: 'rgb(3,133,62)',
+                    borderColor: 'rgb(3,133,62)',
+                    // pointRadius: '.75',
+                    data: [140, 202, 247, 304, 325, 376, 580, 735, 853, 911, 1055, 1219, 1371, 1669]
+                },]
             },
             options: {
                     scales: {
@@ -88,13 +87,25 @@
         // The type of chart we want to create
         type: 'line',
             data: {
-                labels: ['3/13/2020', '3/14/2020', '3/15/2020', '3/16/2020', '3/17/2020', '3/18/2020', '3/19/2020', '3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020', '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020'],
+                labels: [
+                    'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
+                    'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
+                    'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV','NH','NJ',
+                    'NM', 'NY', 'NC','ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+                    'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
+                    'DC'],
                 datasets: [{
                     label: 'COVID-19 confirmed cases for Texas',
-                    backgroundColor: 'rgb(155, 155, 155)',
-                    borderColor: 'rgb(155, 155, 155)',
-                    pointRadius: '.75',
-                    data: [58, 69, 80, 87, 106, 166, 248, 377, 547, 632, 728, 857, 1119, 1543, 1942, 2161, 2712, 3043, 3576, 4261, 5069]
+                    backgroundColor: 'rgb(0, 0, 0)',
+                    tension:'.1',
+                    borderColor: 'rgb(255, 255, 255)',
+                    pointRadius: '4',
+                    data: [
+                        1106, 143, 1413, 614, 8155, 3342, 3357, 368, 7495, 4748,
+                        205, 669, 6980, 2565, 549, 482, 680, 6424, 344, 1985,
+                        7338, 9334, 742, 1177, 1581, 228, 214, 1279, 415, 22255,
+                        363, 84735, 1857, 147, 2547, 719, 736, 5805, 566, 1293, 129, 2240,
+                        3997, 1012, 321, 1706, 5319, 191, 1550, 137, 586]
                 }]
             },
                 options: {
@@ -108,6 +119,24 @@
                 }
             }
         });
+        // And for a doughnut chart
+            var myDoughnutChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: data,
+                options: options
+            });
+            data = {
+                    datasets: [{
+                        data: [10, 20, 30]
+                    }],
+
+                    // These labels appear in the legend and in the tooltips when hovering different arcs
+                    labels: [
+                        'Red',
+                        'Yellow',
+                        'Blue'
+                    ]
+                };
     </script>
 </body>
 </html>
