@@ -10,17 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
     <link rel="stylesheet" href="./assets/style.css">
-    <style>
-    *{
-        color: white;
-        background-color: black;
-    }
-    h1{
-    font-family:"Conman Regular";
-    text-align: center;
-    }
-    </style>
-
 </head>
 
 <body>
@@ -31,12 +20,14 @@
     <br>
     <br>
     <br>
+    <h1>COVID-19 Confirmed Cases & Deaths in the United States</h1>
     <div class="graph-container">
         <canvas id="myChart3"></canvas>
     </div>
     <br>
     <br>
     <br>
+    <h1>COVID-19 Cases by State</h1>
     <div class="graph-container">
         <canvas id="myChart2"></canvas>
     </div>
@@ -96,7 +87,7 @@
         var ctx = document.getElementById('myChart2').getContext('2d');
         var chart = new Chart(ctx, {
         // The type of chart we want to create
-        type: 'line',
+        type: 'bar',
             data: {
                 labels: [
                     'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
@@ -109,7 +100,7 @@
                     backgroundColor: 'rgb(0, 0, 0)',
                     tension:'.01',
                     borderColor: 'rgb(255, 255, 255)',
-                    pointRadius: '3',
+                    pointRadius: '4',
                     data: [
                         2006, 189, 2465, 927, 16284, 5172, 6906, 783, 13621, 7558,
                         385, 1170, 12262, 4956, 946, 853, 1057, 14867, 499, 4045,
