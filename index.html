@@ -13,6 +13,15 @@
 </head>
 
 <body>
+
+    <h1>COVID-19 Confirmed Cases & Deaths in the United States</h1>
+    <p>
+        Current cases in the United States: <span id="timelines-confirmed"></span><br />
+        Current death toll in the United States: <span id="timelines-deaths"></span>
+    </p>
+    <div class="graph-container3">
+        <canvas id="myChart3"></canvas>
+    </div>
     <h1>COVID-19 cases in Texas cities</h1>
     <div class="graph-container">
         <canvas id="myChart"></canvas>
@@ -33,12 +42,22 @@
     </div>
     
     <script>
-            var ctx = document.getElementById('myChart').getContext('2d');
-            var chart = new Chart(ctx, {
+        const api_url = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/225?source=jhu&timelines=true';
+        async function getConfirmed() {
+            const response = await fetch(api_url);
+            const data = await response.json();
+            
+            console.log(data.location.timelines.confirmed);
+            console.log(data.location.timelines.deaths);
+        }
+    
+    getConfirmed();
+      var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
             // The type of chart we want to create
             type: 'line',
             data: {
-                labels: ['3/23/2020','3/30/2020','4/6/2020','4/13/2020'],
+                labels: ['3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020'],
                 datasets: [
                     {
                         label: 'COVID-19 confirmed cases El Paso, TX & Las Cruces, NM',
@@ -56,47 +75,48 @@
                         data: [7, 265, 653, 1095]
                     },
                     {
-                    label: 'COVID-19 confirmed Houston, TX',
-                    tension: '.5',
-                    // backgroundColor: 'rgb(46,76,157)',
-                    borderColor: 'rgb(46,76,157)',
-                    // pointRadius: '.75',
-                    data: [164, 894, 2675, 5147]
-                },
-                {
-                    label: 'COVID-19 confirmed cases Dallas/ Fort Worth, TX',
-                    tension: '.5',
-                    // backgroundColor: 'rgb(3,133,62)',
-                    borderColor: 'rgb(3,133,62)',
-                    // pointRadius: '.75',
-                    data: [304, 1055, 2370, 3856]
-                },]
+                        label: 'COVID-19 confirmed Houston, TX',
+                        tension: '.5',
+                        // backgroundColor: 'rgb(46,76,157)',
+                        borderColor: 'rgb(46,76,157)',
+                        // pointRadius: '.75',
+                        data: [164, 894, 2675, 5147]
+                    },
+                    {
+                        label: 'COVID-19 confirmed cases Dallas/ Fort Worth, TX',
+                        tension: '.5',
+                        // backgroundColor: 'rgb(3,133,62)',
+                        borderColor: 'rgb(3,133,62)',
+                        // pointRadius: '.75',
+                        data: [304, 1055, 2370, 3856]
+                    },]
             },
             options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                suggestedMin: 50,
-                                suggestedMax: 100
-                            }
-                        }]
-                    }}
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    }]
+                }
+            }
         });
         var ctx = document.getElementById('myChart2').getContext('2d');
         var chart = new Chart(ctx, {
-        // The type of chart we want to create
-        type: 'bar',
+            // The type of chart we want to create
+            type: 'bar',
             data: {
                 labels: [
                     'AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA',
                     'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD',
-                    'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV','NH','NJ',
-                    'NM', 'NY', 'NC','ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
+                    'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ',
+                    'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC',
                     'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY',
                     'DC'],
                 datasets: [{
                     backgroundColor: 'rgb(255, 255, 255)',
-                    tension:'.01',
+                    tension: '.01',
                     borderColor: 'rgb(255, 255, 255)',
                     pointRadius: '4',
                     data: [
@@ -108,7 +128,7 @@
                         1955]
                 }]
             },
-                options: {
+            options: {
                 scales: {
                     yAxes: [{
                         ticks: {
@@ -119,43 +139,44 @@
                 }
             }
         });
-         var ctx = document.getElementById('myChart3').getContext('2d');
-            var chart = new Chart(ctx, {
-                // The type of chart we want to create
-                type: 'line',
-                data: {
-                    labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020',
-                        '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020', '4/3/2020',
-                        '4/4/2020', '4/5/2020', '4/6/2020', '4/7/2020', '4/8/2020', '4/9/2020', '4/10/2020', '4/11/2020', '4/12/2020',
-                         '4/13/2020', '4/14/2020', '4/15/2020'],
-                    datasets: [
-                        {
-                            label: 'Total deaths from Covid-19 in the United States',
-                            tension: '.5',
-                            backgroundColor: 'rgb(255,0,0)',
-                            borderColor: 'rgb(255, 0, 0)',
-                            data: [244, 307, 417, 557, 706, 942, 1209, 1581, 2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407, 9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020, 23529, 25832, 28326]
-                        },
-                        {
-                            label: 'Total confirmed cases in the United States',
-                            tension: '.5',
-                            backgroundColor: 'rgb(255,255,255)',
-                            borderColor: 'rgb(255, 255, 255)',
-                            data: [19273, 25600, 33276, 43847, 53740, 65778, 83836, 101657, 121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850, 337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313, 580619, 607670, 636350]
-                        },
-                      ]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                suggestedMin: 50,
-                                suggestedMax: 100
-                            }
-                        }]
-                    }
+        var ctx = document.getElementById('myChart3').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+            data: {
+                labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020',
+                    '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020', '4/3/2020',
+                    '4/4/2020', '4/5/2020', '4/6/2020', '4/7/2020', '4/8/2020', '4/9/2020', '4/10/2020', '4/11/2020', '4/12/2020',
+                    '4/13/2020', '4/14/2020', '4/15/2020'],
+                datasets: [
+                    {
+                        label: 'Total deaths from Covid-19 in the United States',
+                        tension: '.5',
+                        backgroundColor: 'rgb(255,0,0)',
+                        borderColor: 'rgb(255, 0, 0)',
+                        data: [244, 307, 417, 557, 706, 942, 1209, 1581, 2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407, 9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020, 23529, 25832, 28326]
+                    },
+                    {
+                        label: 'Total confirmed cases in the United States',
+                        tension: '.5',
+                        backgroundColor: 'rgb(255,255,255)',
+                        borderColor: 'rgb(255, 255, 255)',
+                        data: [19273, 25600, 33276, 43847, 53740, 65778, 83836, 101657, 121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850, 337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313, 580619, 607670, 636350]
+                    },
+                ]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            suggestedMin: 50,
+                            suggestedMax: 100
+                        }
+                    }]
                 }
-            });
+            }
+        });
     </script>
+    
 </body>
 </html>

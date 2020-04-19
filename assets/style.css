@@ -2,7 +2,12 @@
     color: white;
     background-color: black;
 }
-
+p{
+    color: white;
+    font-family:"Conman Regular";
+    text-align: center;
+    line-height: 50px;
+}
 h1{
     font-family:"Conman Regular";
     text-align: center;
