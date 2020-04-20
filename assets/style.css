@@ -1,6 +1,6 @@
 *{
     color: white;
-    background-color: black;
+    background-color: rgb(53, 53, 53);
 }
 p{
     color: white;
@@ -11,5 +11,26 @@ p{
 h1{
     font-family:"Conman Regular";
     text-align: center;
+    font-size: 48px;
+    text-decoration: underline ;
+}
+#global-numbers{
+    font-size: 28px;
+    border: 1px white solid;
+}
+.us-container{
+    border: 1px white solid;
+}
+.texas-container{
+    border: 1px white solid;
+}
+.state-container{
+    border: 1px white solid;
+}
+
+h2{
+    font-family:"Conman Regular";
+    text-align: center;
+    text-decoration: underline ;
 }
 

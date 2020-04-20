@@ -13,34 +13,50 @@
 </head>
 
 <body>
+    <h1>COVID-19</h1>
 
-    <h1>COVID-19 Confirmed Cases & Deaths in the United States</h1>
-    <p>
-        Current cases in the United States: <span id="timelines-confirmed"></span><br />
-        Current death toll in the United States: <span id="timelines-deaths"></span>
-    </p>
-    <div class="graph-container3">
-        <canvas id="myChart3"></canvas>
+    <div id=global-numbers>
+        <p>
+            Global confirmed cases: <span>2,460,121</span><br/>
+            Global death toll:  <span>168,956</span>
+        </p>
     </div>
-    <h1>COVID-19 cases in Texas cities</h1>
-    <div class="graph-container">
-        <canvas id="myChart"></canvas>
+
+    <br/>
+    <br/>
+
+    <div class="us-container">
+        <h2>COVID-19 Confirmed Cases & Deaths in the United States</h2>
+            <p>
+                Current cases in the United States: <span id="timelines-confirmed"></span><br />
+                Current death toll in the United States: <span id="timelines-deaths"></span>
+            </p>
+        <div class="graph-container3">
+            <canvas id="myChart3"></canvas>
+        </div>
     </div>
+
     <br>
     <br>
     <br>
-    <h1>COVID-19 Confirmed Cases & Deaths in the United States</h1>
-    <div class="graph-container3">
-        <canvas id="myChart3"></canvas>
+
+    <div class="texas-container">
+        <h2>COVID-19 cases in Texas cities</h2>
+        <div class="graph-container">
+            <canvas id="myChart"></canvas>
+        </div>
     </div>
+
     <br>
     <br>
     <br>
-    <h1>COVID-19 Cases by State</h1>
-    <div class="graph-container2">
-        <canvas id="myChart2"></canvas>
+    <div class="state-container">
+        <h2>COVID-19 Cases by State</h2>
+        <div class="graph-container2">
+            <canvas id="myChart2"></canvas>
+        </div>
     </div>
-    
+
     <script>
         const api_url = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/225?source=jhu&timelines=true';
         async function getConfirmed() {
@@ -57,39 +73,47 @@
             // The type of chart we want to create
             type: 'line',
             data: {
-                labels: ['3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020'],
+                labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020'],
                 datasets: [
                     {
-                        label: 'COVID-19 confirmed cases El Paso, TX & Las Cruces, NM',
+                        label: 'COVID-19 confirmed cases in Combined El Paso(TX) and Las Cruces(NM) Statistical Area',
                         tension: '.5',
                         // backgroundColor: 'rgb(85,0,0)',
                         borderColor: 'rgb(255, 128, 0)',
-                        data: [16, 65, 155, 350]
+                        data: [2, 16, 65, 155, 350, 600]
                     },
                     {
-                        label: 'COVID-19 confirmed cases Austin, TX',
+                        label: 'COVID-19 confirmed cases in the Greater Austin Area',
                         tension: '.5',
                         // backgroundColor: 'rgb(254,228,110)',
                         borderColor: 'rgb(254,228,110)',
                         // pointRadius: '.75',
-                        data: [7, 265, 653, 1095]
+                        data: [7, 7, 265, 653, 1095, 1434]
                     },
                     {
-                        label: 'COVID-19 confirmed Houston, TX',
+                        label: 'COVID-19 confirmed in the Greater Houston Area',
                         tension: '.5',
                         // backgroundColor: 'rgb(46,76,157)',
                         borderColor: 'rgb(46,76,157)',
                         // pointRadius: '.75',
-                        data: [164, 894, 2675, 5147]
+                        data: [26, 164, 894, 2675, 5147, 6679]
                     },
                     {
-                        label: 'COVID-19 confirmed cases Dallas/ Fort Worth, TX',
+                        label: 'COVID-19 confirmed cases in the Dallas Fort Worth Metroplex',
                         tension: '.5',
                         // backgroundColor: 'rgb(3,133,62)',
                         borderColor: 'rgb(3,133,62)',
                         // pointRadius: '.75',
-                        data: [304, 1055, 2370, 3856]
-                    },]
+                        data: [28, 304, 1055, 2370, 3856, 5084]
+                    },
+                                    {
+                        label: 'COVID-19 confirmed cases in the Greater San Antonio Area',
+                        tension: '.5',
+                        // backgroundColor: 'rgb(3,133,62)',
+                        borderColor: 'rgb(200,0,62)',
+                        // pointRadius: '.75',
+                        data: [13, 51, 191, 543, 916, 1179]
+                    }]
             },
             options: {
                 scales: {
@@ -120,12 +144,12 @@
                     borderColor: 'rgb(255, 255, 255)',
                     pointRadius: '4',
                     data: [
-                        3805, 275, 3701, 1475, 24334, 7691, 13381, 1761, 21011, 13125,
-                        502, 1453, 22025, 8236, 1710, 1383, 2048, 21016, 698, 8936,
-                        26867, 25487, 1650, 2942, 4388, 394, 806, 3036, 1020, 64584,
-                        1345, 195031, 4815, 331, 6975, 2069, 1584, 24295, 2976, 3439,
-                        868, 5483, 14488, 2363, 748, 5747, 10538, 638, 3428, 275,
-                        1955]
+                        4723, 312, 4719, 1777, 30829, 9433, 17550, 2538, 25484, 17014,
+                        568, 1577, 29160, 10641, 2513, 1820, 2707, 23580, 847, 12308,
+                        36372, 30717, 2213, 3974, 5517, 426, 1348, 3626, 1342, 81420,
+                        1798, 236763, 6140, 528, 10222, 2570, 1844, 31742, 4491, 4246,
+                        1542, 6637, 18927, 2942, 803, 8053, 11802, 825, 4199, 309,
+                        2666]
                 }]
             },
             options: {
@@ -147,21 +171,23 @@
                 labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020',
                     '3/27/2020', '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020', '4/3/2020',
                     '4/4/2020', '4/5/2020', '4/6/2020', '4/7/2020', '4/8/2020', '4/9/2020', '4/10/2020', '4/11/2020', '4/12/2020',
-                    '4/13/2020', '4/14/2020', '4/15/2020'],
+                    '4/13/2020', '4/14/2020', '4/15/2020', '4/16/2020', '4/17/2020', '4/18/2020', '4/19/2020'],
                 datasets: [
                     {
                         label: 'Total deaths from Covid-19 in the United States',
                         tension: '.5',
+                        pointRadius: '0',
                         backgroundColor: 'rgb(255,0,0)',
-                        borderColor: 'rgb(255, 0, 0)',
-                        data: [244, 307, 417, 557, 706, 942, 1209, 1581, 2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407, 9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020, 23529, 25832, 28326]
+                        // borderColor: 'rgb(255, 0, 0)',
+                        data: [244, 307, 417, 557, 706, 942, 1209, 1581, 2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407, 9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020, 23529, 25831, 28325, 32916, 36773, 38664, 40661]
                     },
                     {
                         label: 'Total confirmed cases in the United States',
                         tension: '.5',
-                        backgroundColor: 'rgb(255,255,255)',
-                        borderColor: 'rgb(255, 255, 255)',
-                        data: [19273, 25600, 33276, 43847, 53740, 65778, 83836, 101657, 121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850, 337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313, 580619, 607670, 636350]
+                        pointRadius: '0',
+                        backgroundColor: 'rgb(40,40,40)',
+                        // borderColor: 'rgb(255, 255, 255)',
+                        data: [19273, 25600, 33276, 43847, 53740, 65778, 83836, 101657, 121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850, 337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313, 580619, 607670, 636350, 667592, 699706, 732197, 759086]
                     },
                 ]
             },
