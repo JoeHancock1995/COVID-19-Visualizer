@@ -17,8 +17,8 @@
 
     <div id=global-numbers>
         <p>
-            Global confirmed cases: <span>2,460,121</span><br/>
-            Global death toll:  <span>168,956</span>
+            Global confirmed cases: <span id="global-confirmed"> </span><br/>
+            Global death toll:  <span id="global-deaths"> </span>
         </p>
     </div>
 
@@ -28,8 +28,8 @@
     <div class="us-container">
         <h2>COVID-19 Confirmed Cases & Deaths in the United States</h2>
             <p>
-                Current cases in the United States: <span id="timelines-confirmed"></span><br />
-                Current death toll in the United States: <span id="timelines-deaths"></span>
+                Current cases in the United States: <span id="total-confirmed"></span><br />
+                Current death toll in the United States: <span id="total-deaths"></span>
             </p>
         <div class="graph-container3">
             <canvas id="myChart3"></canvas>
@@ -58,16 +58,33 @@
     </div>
 
     <script>
-        const api_url = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/225?source=jhu&timelines=true';
-        async function getConfirmed() {
-            const response = await fetch(api_url);
+        const summary_url = 'https://api.covid19api.com/summary';
+        async function getSummary() {
+            const response = await fetch(summary_url);
             const data = await response.json();
+            const{ Global } = data;
+            const{ TotalConfirmed } = Global;
+            const { TotalDeaths } = Global;
+
+            document.getElementById('global-confirmed').textContent = TotalConfirmed;
+            document.getElementById('global-deaths').textContent = TotalDeaths;
+            console.log(Global);
+            console.log(TotalConfirmed);
+            console.log(TotalDeaths);
+        }  
+        getSummary();
+
+        // const api_url = 'https://coronavirus-tracker-api.herokuapp.com/v2/locations/225?source=jhu&timelines=true';
+        // async function getConfirmed() {
+        //     const response = await fetch(api_url);
+        //     const data = await response.json();
             
-            console.log(data.location.timelines.confirmed);
-            console.log(data.location.timelines.deaths);
-        }
+        //     console.log(data.location.timelines.confirmed);
+        //     console.log(data.location.timelines.deaths);
+        // }
     
-    getConfirmed();
+        // getConfirmed();
+
       var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
             // The type of chart we want to create

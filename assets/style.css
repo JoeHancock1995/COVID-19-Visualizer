@@ -4,7 +4,7 @@
 }
 p{
     color: white;
-    font-family:"Conman Regular";
+    font-family:"ticketing";
     text-align: center;
     line-height: 50px;
 }
@@ -12,11 +12,11 @@ h1{
     font-family:"Conman Regular";
     text-align: center;
     font-size: 48px;
-    text-decoration: underline ;
+    /* text-decoration: underline ; */
 }
 #global-numbers{
     font-size: 28px;
-    border: 1px white solid;
+    /* border: 1px white solid; */
 }
 .us-container{
     border: 1px white solid;
@@ -31,6 +31,6 @@ h1{
 h2{
     font-family:"Conman Regular";
     text-align: center;
-    text-decoration: underline ;
+    /* text-decoration: underline ; */
 }
 
