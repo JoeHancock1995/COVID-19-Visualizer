@@ -2,11 +2,21 @@
     color: white;
     background-color: rgb(53, 53, 53);
 }
-p{
+#global-cases{
     color: white;
     font-family:"ticketing";
-    text-align: center;
-    line-height: 50px;
+    line-height: 35px;
+    box-sizing: border-box;
+    display: inline;
+    text-align: left;
+}
+
+.case-numbers{
+    color: white;
+    font-family:"ticketing";
+    line-height: 35px;
+    box-sizing: border-box;
+    width: 45%;
 }
 h1{
     font-family:"Conman Regular";
