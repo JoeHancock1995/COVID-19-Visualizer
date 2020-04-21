@@ -19,7 +19,7 @@
     width: 45%;
 }
 h1{
-    font-family:"Conman Regular";
+    font-family: 'Kumar One Outline', cursive;
     text-align: center;
     font-size: 48px;
     /* text-decoration: underline ; */
@@ -44,3 +44,10 @@ h2{
     /* text-decoration: underline ; */
 }
 
+/* font-family: 'Kumar One', cursive;
+font-family: 'Kavivanar', cursive;
+font-family: 'Offside', cursive;
+font-family: 'Alatsi', sans-serif;
+font-family: 'Lekton', sans-serif;
+font-family: 'Oxygen Mono', monospace;
+font-family: 'Kumar One Outline', cursive; */
