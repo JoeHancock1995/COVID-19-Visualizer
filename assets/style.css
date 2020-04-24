@@ -14,12 +14,12 @@
 .case-numbers{
     color: white;
     font-family:"ticketing";
-    line-height: 35px;
+    line-height: 30px;
+    font-size: 32px;
     box-sizing: border-box;
-    width: 45%;
 }
 h1{
-    font-family: 'Kumar One Outline', cursive;
+    font-family: 'Kumar One Outline';
     text-align: center;
     font-size: 48px;
     /* text-decoration: underline ; */
@@ -39,7 +39,7 @@ h1{
 }
 
 h2{
-    font-family:"Conman Regular";
+    font-family:"Kavivanar";
     text-align: center;
     /* text-decoration: underline ; */
 }
