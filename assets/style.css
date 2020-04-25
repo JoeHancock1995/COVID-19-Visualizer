@@ -4,7 +4,7 @@
 }
 #global-cases{
     color: white;
-    font-family:"ticketing";
+    font-family:"DS Crystal";
     line-height: 35px;
     box-sizing: border-box;
     display: inline;
@@ -12,16 +12,16 @@
 }
 
 .case-numbers{
-    color: white;
-    font-family:"ticketing";
-    line-height: 30px;
-    font-size: 32px;
+    color: red;
+    font-family:"DS Crystal";
+    line-height: 20px;
+    font-size: 22px;
     box-sizing: border-box;
 }
 h1{
-    font-family: 'ticketing';
-    text-align: center;
-    font-size: 48px;
+    font-family: 'The Led Display St';
+    text-align: Left;
+    font-size: 44px;
     /* text-decoration: underline ; */
 }
 #global-numbers{
@@ -39,15 +39,7 @@ h1{
 }
 
 h2{
-    font-family:"Kavivanar";
+    font-family:"DS Crystal";
     text-align: center;
     /* text-decoration: underline ; */
 }
-
-/* font-family: 'Kumar One', cursive;
-font-family: 'Kavivanar', cursive;
-font-family: 'Offside', cursive;
-font-family: 'Alatsi', sans-serif;
-font-family: 'Lekton', sans-serif;
-font-family: 'Oxygen Mono', monospace;
-font-family: 'Kumar One Outline', cursive; */
