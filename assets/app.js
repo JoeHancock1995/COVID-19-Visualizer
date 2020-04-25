@@ -15,44 +15,55 @@ async function getSummary() {
 }
 getSummary();
 
+// const us_url = 'https://api.covid19api.com/live/country/united-states'
+// async function getusSummary() {
+//     const response = await fetch(us_url);
+//     const data = await response.json();
+//     const { Confirmed, Deaths, Province } = data;
+
+//     console.log(Confirmed);
+//     console.log(Deaths);
+//     console.log(Province)
+// }
+// getusSummary();
 var requestOptions = {
     method: 'GET',
     redirect: 'follow'
 };
 
-fetch("https://api.covid19api.com/total/country/united-states/status/confirmed", requestOptions)
-    .then(response => response.text())
-    .then(result => console.log(result))
-    .catch(error => console.log('error', error));
+let stateConfirmed, stateDeaths, stateName = [];
 
-// const us_url = 'https://api.covid19api.com/live/country/united-states';
+fetch("https://api.covid19api.com/live/country/united-states", requestOptions)
+.then(function(resp) {
+    return resp.json();
+})
 
-// async function getUnitedStates() {
-//     const response = await fetch(us_url);
-//     const data = await response.json();
-//     const { Confirmed } = data;
+.then(function(result) {
+    console.log(result);
 
-//     document.getElementById('us-confirmed').textContent = Confirmed;
+    stateConfirmed = result.Confirmed;
+    stateDeaths = result.Deaths;
+    stateName = result.Province;
+})
+let usConfirmed, usDeaths = [];
 
-//     console.log(Confirmed);
-// } 
-// getUnitedStates();
-// var requestOptions = {
-//     method: 'GET',
-//     redirect: 'follow'
-// };
-
-// fetch("https://api.covid19api.com/total/country/united-states/status/confirmed?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z", requestOptions)
-//     .then(response => response.text())
-//     .then(result => console.log(result))
-//     .catch(error => console.log('error', error));
-
+// fetch("https://api.covid19api.com/live/country/united-states", requestOptions)
+//     .then(function(resp) {
+//     return resp.json();
+// })
+// .then(function(result) {
+//     console.log(result);
+//     usConfirmed = result.Confirmed;
+//     usDeaths = result.Deaths;
+//     document.getElementById('us-confirmed').textContent= usConfirmed;
+// })
+// https://api.covid19api.com/live/country/united-states
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020'],
+        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/21/2020'],
         datasets: [
             {
             //El paso area and Las Cruces, NM(doesn't include Ciudad de Juarez)
