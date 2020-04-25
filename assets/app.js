@@ -1,3 +1,4 @@
+//Global cases API =======================================================================
 const summary_url = 'https://api.covid19api.com/summary';
 
 async function getSummary() {
@@ -15,49 +16,20 @@ async function getSummary() {
 }
 getSummary();
 
-// const us_url = 'https://api.covid19api.com/live/country/united-states'
-// async function getusSummary() {
-//     const response = await fetch(us_url);
-//     const data = await response.json();
-//     const { Confirmed, Deaths, Province } = data;
+//USA cases API=======================================================================
+const us_url = 'https://corona.lmao.ninja/v2/countries/us?yesterday=false';
 
-//     console.log(Confirmed);
-//     console.log(Deaths);
-//     console.log(Province)
-// }
-// getusSummary();
-var requestOptions = {
-    method: 'GET',
-    redirect: 'follow'
-};
+async function getUsSummary() {
+    const response = await fetch (us_url);
+    const data = await response.json();
+    const { cases, deaths } = data;
 
-let stateConfirmed, stateDeaths, stateName = [];
+    document.getElementById('us-confirmed').textContent = cases;
+    document.getElementById('us-deaths').textContent = deaths;
 
-fetch("https://api.covid19api.com/live/country/united-states", requestOptions)
-.then(function(resp) {
-    return resp.json();
-})
-
-.then(function(result) {
-    console.log(result);
-
-    stateConfirmed = result.Confirmed;
-    stateDeaths = result.Deaths;
-    stateName = result.Province;
-})
-let usConfirmed, usDeaths = [];
-
-// fetch("https://api.covid19api.com/live/country/united-states", requestOptions)
-//     .then(function(resp) {
-//     return resp.json();
-// })
-// .then(function(result) {
-//     console.log(result);
-//     usConfirmed = result.Confirmed;
-//     usDeaths = result.Deaths;
-//     document.getElementById('us-confirmed').textContent= usConfirmed;
-// })
-// https://api.covid19api.com/live/country/united-states
+    console.log(data);
+}
+getUsSummary();
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
