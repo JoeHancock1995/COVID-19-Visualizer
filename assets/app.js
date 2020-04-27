@@ -31,6 +31,7 @@ async function getUsSummary() {
 }
 getUsSummary();
 
+
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
@@ -41,7 +42,6 @@ var chart = new Chart(ctx, {
             //El paso area and Las Cruces, NM(doesn't include Ciudad de Juarez)
                 label: 'COVID-19 confirmed cases in Combined El Paso(TX) and Las Cruces(NM) Statistical Area',
                 tension: '.5',
-                // backgroundColor: 'rgb(85,0,0)',
                 borderColor: 'rgb(255, 128, 0)',
                 data: [2, 16, 65, 155, 350, 600]
             },
@@ -50,36 +50,28 @@ var chart = new Chart(ctx, {
             //Greater Austin area made up of Travis, Williamson, Hays, & Bastrop counties
                 label: 'COVID-19 confirmed cases in the Greater Austin Area',
                 tension: '.5',
-                // backgroundColor: 'rgb(254,228,110)',
                 borderColor: 'rgb(254,228,110)',
-                // pointRadius: '.75',
                 data: [7, 7, 265, 653, 1095, 1434]
             },
             {
             //Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
                 label: 'COVID-19 confirmed in the Greater Houston Area',
                 tension: '.5',
-                // backgroundColor: 'rgb(46,76,157)',
                 borderColor: 'rgb(46,76,157)',
-                // pointRadius: '.75',
                 data: [26, 164, 894, 2675, 5147, 6679]
             },
             {
             //DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
                 label: 'COVID-19 confirmed cases in the Dallas Fort Worth Metroplex',
                 tension: '.5',
-                // backgroundColor: 'rgb(3,133,62)',
                 borderColor: 'rgb(3,133,62)',
-                // pointRadius: '.75',
                 data: [28, 304, 1055, 2370, 3856, 5084]
             },
             {
             // Greater San Antonio Area is Atacosta, Bexar, Bandera, Comal, Guadulupe, Kendall, Medina, & Wilson counties
                 label: 'COVID-19 confirmed cases in the Greater San Antonio Area',
                 tension: '.5',
-                // backgroundColor: 'rgb(3,133,62)',
                 borderColor: 'rgb(200,0,62)',
-                // pointRadius: '.75',
                 data: [13, 51, 191, 543, 916, 1179]
             }]
     },
@@ -95,9 +87,9 @@ var chart = new Chart(ctx, {
     }
 });
 
+
 var ctx = document.getElementById('myChart2').getContext('2d');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
     type: 'bar',
     data: {
         labels: [
@@ -135,7 +127,6 @@ var chart = new Chart(ctx, {
 
 var ctx = document.getElementById('myChart3').getContext('2d');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
     type: 'line',
     data: {
         labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020','3/27/2020',
@@ -149,7 +140,6 @@ var chart = new Chart(ctx, {
                 tension: '.5',
                 pointRadius: '0',
                 backgroundColor: 'rgb(255,0,0)',
-                // borderColor: 'rgb(255, 0, 0)',
                 data: [244, 307, 417, 557, 706, 942, 1209, 1581,
                     2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407,
                     9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020,
@@ -161,7 +151,6 @@ var chart = new Chart(ctx, {
                 tension: '.5',
                 pointRadius: '0',
                 backgroundColor: 'rgb(40,40,40)',
-                // borderColor: 'rgb(255, 255, 255)',
                 data: [19273, 25600, 33276, 43847, 53740, 65778, 83836, 101657,
                     121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850,
                     337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313,

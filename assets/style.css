@@ -2,17 +2,7 @@
     color: limegreen;
     background-color: rgb(0, 0, 0);
 }
-#global-cases{
-    color: white;
-    font-family:"DS Crystal";
-    line-height: 35px;
-    box-sizing: border-box;
-    display: inline;
-    text-align: left;
-}
-
 .case-numbers{
-    color: red;
     font-family:"DS Crystal";
     line-height: 20px;
     font-size: 22px;
@@ -22,24 +12,30 @@ h1{
     font-family: 'The Led Display St';
     text-align: Left;
     font-size: 44px;
-    /* text-decoration: underline ; */
 }
-#global-numbers{
-    font-size: 28px;
-    /* border: 1px white solid; */
-}
-.us-container{
-    border: 1px white solid;
-}
-.texas-container{
-    border: 1px white solid;
-}
-.state-container{
-    border: 1px white solid;
-}
-
 h2{
     font-family:"DS Crystal";
     text-align: center;
-    /* text-decoration: underline ; */
+}
+.us-container{
+    position: static;
+    height:30vh;
+    width:49%;     
+    float: left;
+    clear: both;
+    border: none;
+}
+.state-container{
+    position: static;
+    height:30vh;
+    width:49%;
+    float: right;
+}
+.texas-container{
+    position: relative;
+    margin-top: 300px;
+    height:75vh;
+    width:100vw;
+    float: left;
+    clear: both;
 }
