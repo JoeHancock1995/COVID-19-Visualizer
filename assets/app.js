@@ -40,7 +40,7 @@ var chart = new Chart(ctx, {
         datasets: [
             {
             //El paso area and Las Cruces, NM(doesn't include Ciudad de Juarez)
-                label: 'COVID-19 confirmed cases in Combined El Paso(TX) and Las Cruces(NM) Statistical Area',
+                label: 'Confirmed cases in Combined El Paso(TX) and Las Cruces(NM) Statistical Area',
                 tension: '.5',
                 borderColor: 'rgb(255, 128, 0)',
                 data: [2, 16, 65, 155, 350, 600]
@@ -48,28 +48,28 @@ var chart = new Chart(ctx, {
             
             {
             //Greater Austin area made up of Travis, Williamson, Hays, & Bastrop counties
-                label: 'COVID-19 confirmed cases in the Greater Austin Area',
+                label: 'Confirmed cases in the Greater Austin Area',
                 tension: '.5',
                 borderColor: 'rgb(254,228,110)',
                 data: [7, 7, 265, 653, 1095, 1434]
             },
             {
             //Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
-                label: 'COVID-19 confirmed in the Greater Houston Area',
+                label: 'Confirmed in the Greater Houston Area',
                 tension: '.5',
                 borderColor: 'rgb(46,76,157)',
                 data: [26, 164, 894, 2675, 5147, 6679]
             },
             {
             //DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
-                label: 'COVID-19 confirmed cases in the Dallas Fort Worth Metroplex',
+                label: 'Confirmed cases in the Dallas Fort Worth Metroplex',
                 tension: '.5',
                 borderColor: 'rgb(3,133,62)',
                 data: [28, 304, 1055, 2370, 3856, 5084]
             },
             {
             // Greater San Antonio Area is Atacosta, Bexar, Bandera, Comal, Guadulupe, Kendall, Medina, & Wilson counties
-                label: 'COVID-19 confirmed cases in the Greater San Antonio Area',
+                label: 'Confirmed cases in the Greater San Antonio Area',
                 tension: '.5',
                 borderColor: 'rgb(200,0,62)',
                 data: [13, 51, 191, 543, 916, 1179]
@@ -114,13 +114,21 @@ var chart = new Chart(ctx, {
         }]
     },
     options: {
+        legend: {
+            display: false
+        },
         scales: {
             yAxes: [{
                 ticks: {
                     suggestedMin: 50,
                     suggestedMax: 100
                 }
-            }]
+            }],
+            xAxes: [{
+                ticks: {
+                    fontSize: 8
+                }
+            }],
         }
     }
 });
@@ -165,6 +173,11 @@ var chart = new Chart(ctx, {
                 ticks: {
                     suggestedMin: 50,
                     suggestedMax: 100
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    fontSize: 8
                 }
             }]
         }

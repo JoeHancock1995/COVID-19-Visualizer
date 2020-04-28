@@ -2,20 +2,37 @@
     color: limegreen;
     background-color: rgb(0, 0, 0);
 }
-.case-numbers{
-    font-family:"DS Crystal";
-    line-height: 20px;
-    font-size: 22px;
-    box-sizing: border-box;
-}
 h1{
     font-family: 'The Led Display St';
     text-align: Left;
     font-size: 44px;
 }
+.case-numbers{
+    font-family:"DS Crystal";
+    line-height: 20px;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+#global-case-container{
+    width: 48%;
+    float: left;
+
+}
+#us-case-container{
+    width: 48%;
+    float: right;
+}
+span{
+    color: red;
+    font-family:  "Digital dream";
+    font-size: 18px;
+}
+
 h2{
     font-family:"DS Crystal";
     text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
 }
 .us-container{
     position: static;
@@ -35,7 +52,7 @@ h2{
     position: relative;
     margin-top: 300px;
     height:75vh;
-    width:100vw;
+    width:98vw;
     float: left;
     clear: both;
 }
