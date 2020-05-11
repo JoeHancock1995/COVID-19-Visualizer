@@ -47,7 +47,7 @@ var chart = new Chart(ctx, {
                 label: 'El Paso(TX) & Las Cruces(NM) Statistical Area',
                 tension: '.5',
                 borderColor: 'rgb(255, 128, 0)',
-                data: [2, 16, 65, 155, 350, 600, 928, 1199]
+                data: [2, 16, 65, 155, 350, 600, 928, 1199, 1572]
             },
             
             {
@@ -55,28 +55,28 @@ var chart = new Chart(ctx, {
                 label: 'Greater Austin Area',
                 tension: '.5',
                 borderColor: 'rgb(254,228,110)',
-                data: [7, 7, 265, 653, 1095, 1434, 1965, 2409]
+                data: [7, 7, 265, 653, 1095, 1434, 1965, 2409, 2817]
             },
             {
             //Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
                 label: 'Greater Houston Area',
                 tension: '.5',
                 borderColor: 'rgb(46,76,157)',
-                data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742]
+                data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742, 11020]
             },
             {
             //DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
                 label: 'Dallas Fort Worth Metroplex',
                 tension: '.5',
                 borderColor: 'rgb(3,133,62)',
-                data: [28, 304, 1055, 2370, 3856, 5084, 6949, 9184]
+                data: [28, 304, 1055, 2370, 3856, 5084, 6949, 9184, 12090]
             },
             {
             // Greater San Antonio Area is Atacosta, Bexar, Bandera, Comal, Guadulupe, Kendall, Medina, & Wilson counties
                 label: 'Greater San Antonio Area',
                 tension: '.5',
                 borderColor: 'rgb(200,0,62)',
-                data: [13, 51, 191, 543, 916, 1179, 1489, 1902]
+                data: [13, 51, 191, 543, 916, 1179, 1489, 1902, 2174]
             }]
     },
     options: {
@@ -158,7 +158,9 @@ var chart = new Chart(ctx, {
                     2026, 2467, 2978, 3873, 4757, 5926, 7087, 8407,
                     9619, 10783, 12722, 14695, 16478, 18586, 20463, 22020,
                     23529, 25831, 28325, 32916, 36773, 38664, 40661, 42094,
-                    44444, 46622, 49724, 51493, 53755, 54881, 56259, 58355]
+                    44444, 46622, 49724, 51493, 53755, 54881, 56259, 58355,
+                    60897, 63108, 64870, 66453, 67784, 68843, 71077, 73785,
+                    75744, 77309, 78763, 79694 ]
             },
             {
                 label: 'Total confirmed cases in the United States',
@@ -169,7 +171,9 @@ var chart = new Chart(ctx, {
                     121478, 140909, 161837, 188172, 213372, 243616, 275586, 308850,
                     337072, 366667, 392663, 429052, 461437, 496535, 526396, 555313,
                     580619, 607670, 636350, 667592, 699706, 732197, 759086, 784326,
-                    811865, 840351, 869170, 905358, 938154, 965785, 988197,1012582]
+                    811865, 840351, 869170, 905358, 938154, 965785, 988197,1012582,
+                    1045116, 1075530, 1109505, 1138970, 1165057, 1186979, 1210686, 1235190,
+                    1264001, 1291528, 1316443, 1336755 ]
             },
         ]
     },
