@@ -1,3 +1,7 @@
+// API page link references
+// 1. https://www.programmableweb.com/news/apis-to-track-coronavirus-covid-19/review/2020/05/01 
+// 2. https://corona.lmao.ninja/docs/#/Default/get_v2_states__states_
+
 //Global cases API =======================================================================
 const summary_url = 'https://api.covid19api.com/summary';
 
@@ -8,8 +12,8 @@ async function getSummary() {
     const { TotalConfirmed } = Global;
     const { TotalDeaths } = Global;
 
-    document.getElementById('global-confirmed').textContent = TotalConfirmed;
-    document.getElementById('global-deaths').textContent = TotalDeaths;
+    document.getElementById('global-confirmed').textContent = TotalConfirmed.toLocaleString();
+    document.getElementById('global-deaths').textContent = TotalDeaths.toLocaleString();
     console.log(Global);
     console.log(TotalConfirmed);
     console.log(TotalDeaths);
@@ -24,8 +28,8 @@ async function getUsSummary() {
     const data = await response.json();
     const { cases, deaths } = data;
 
-    document.getElementById('us-confirmed').textContent = cases;
-    document.getElementById('us-deaths').textContent = deaths;
+    document.getElementById('us-confirmed').textContent = cases.toLocaleString();
+    document.getElementById('us-deaths').textContent = deaths.toLocaleString();
 
     console.log(data);
 }
@@ -36,11 +40,11 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020', '4/27/2020', '5/4/2020'],
+        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020', '4/27/2020', '5/4/2020', '5/11/2020'],
         datasets: [
             {
             //El paso area and Las Cruces, NM(doesn't include Ciudad de Juarez)
-                label: 'Cases in Combined El Paso(TX) and Las Cruces(NM) Statistical Area',
+                label: 'El Paso(TX) & Las Cruces(NM) Statistical Area',
                 tension: '.5',
                 borderColor: 'rgb(255, 128, 0)',
                 data: [2, 16, 65, 155, 350, 600, 928, 1199]
@@ -48,28 +52,28 @@ var chart = new Chart(ctx, {
             
             {
             //Greater Austin area made up of Travis, Williamson, Hays, & Bastrop counties
-                label: 'Cases in the Greater Austin Area',
+                label: 'Greater Austin Area',
                 tension: '.5',
                 borderColor: 'rgb(254,228,110)',
                 data: [7, 7, 265, 653, 1095, 1434, 1965, 2409]
             },
             {
             //Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
-                label: 'Cases in the Greater Houston Area',
+                label: 'Greater Houston Area',
                 tension: '.5',
                 borderColor: 'rgb(46,76,157)',
                 data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742]
             },
             {
             //DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
-                label: 'Cases in the Dallas Fort Worth Metroplex',
+                label: 'Dallas Fort Worth Metroplex',
                 tension: '.5',
                 borderColor: 'rgb(3,133,62)',
                 data: [28, 304, 1055, 2370, 3856, 5084, 6949, 9184]
             },
             {
             // Greater San Antonio Area is Atacosta, Bexar, Bandera, Comal, Guadulupe, Kendall, Medina, & Wilson counties
-                label: 'Cases in the Greater San Antonio Area',
+                label: 'Greater San Antonio Area',
                 tension: '.5',
                 borderColor: 'rgb(200,0,62)',
                 data: [13, 51, 191, 543, 916, 1179, 1489, 1902]
@@ -137,11 +141,13 @@ var ctx = document.getElementById('myChart3').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['3/20/2020', '3/21/2020', '3/22/2020', '3/23/2020', '3/24/2020', '3/25/2020', '3/26/2020','3/27/2020',
-         '3/28/2020', '3/29/2020', '3/30/2020', '3/31/2020', '4/1/2020', '4/2/2020', '4/3/2020','4/4/2020',
-          '4/5/2020', '4/6/2020', '4/7/2020', '4/8/2020', '4/9/2020', '4/10/2020', '4/11/2020', '4/12/2020',
-            '4/13/2020', '4/14/2020', '4/15/2020', '4/16/2020', '4/17/2020', '4/18/2020', '4/19/2020','4/20/2020',
-             '4/21/2020', '4/22/2020', '4/23/2020', '4/24/2020', '4/25/2020', '4/26/2020', '4/27/2020', '4/28/2020'],
+        labels: ['3/20/20', '3/21/20', '3/22/20', '3/23/20', '3/24/20', '3/25/20', '3/26/20','3/27/20',
+        '3/28/20', '3/29/20', '3/30/20', '3/31/20', '4/1/20', '4/2/20', '4/3/20','4/4/20',
+        '4/5/20', '4/6/20', '4/7/20', '4/8/20', '4/9/20', '4/10/20', '4/11/20', '4/12/20',
+        '4/13/20', '4/14/20', '4/15/20', '4/16/20', '4/17/20', '4/18/20', '4/19/20','4/20/20',
+        '4/21/20', '4/22/20', '4/23/20', '4/24/20', '4/25/20', '4/26/20', '4/27/20', '4/28/20',
+        '4/29/20', '4/30/20', '5/1/20', '5/2/20', '5/3/20', '5/4/20', '5/5/20', '5/6/20',
+        '5/7/20', '5/8/20', '5/9/20', '5/10/20', '5/11/20' ],
         datasets: [
             {
                 label: 'Total deaths from Covid-19 in the United States',

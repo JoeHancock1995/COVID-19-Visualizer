@@ -1,6 +1,6 @@
 *{
     color: limegreen;
-    background-color: rgb(0, 0, 0);
+    background-color: white;
 }
 h1{
     font-family: 'The Led Display St';
@@ -24,8 +24,9 @@ h1{
 }
 span{
     color: red;
-    font-family:  "Digital dream";
-    font-size: 18px;
+    font-family:  "Conman Regular";
+    font-size: 22px;
+    letter-spacing: 2px;
 }
 
 h2{
