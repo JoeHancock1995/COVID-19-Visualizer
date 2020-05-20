@@ -35,25 +35,27 @@ h2{
     font-size: 18px;
     letter-spacing: 1px;
 }
-/* .us-container{
+.us-container{
     position: static;
-    height:30vh;
-    width:49%;     
-    float: left;
+    height:70vh;
+    width:80vw;
+    margin: 8% ;     
+    /* float: left; */
     clear: both;
     border: none;
 }
+/*
 .state-container{
     position: static;
     height:30vh;
     width:49%;
     float: right;
-}
+}*/
 .texas-container{
     position: relative;
-    margin-top: 300px;
+    margin-top: 100px;
+       margin: 8% ;   
     height:40vh;
-    width:50vw;
+    width: 80vw;
     float: left;
-    clear: both;
-} */
+} 
