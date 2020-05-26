@@ -39,33 +39,33 @@ var ctx = document.getElementById('myChartTexas').getContext('2d');
 var chart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020', '4/27/2020', '5/4/2020', '5/11/2020', '5/18/2020'],
+        labels: ['3/16/2020', '3/23/2020', '3/30/2020', '4/6/2020', '4/13/2020', '4/20/2020', '4/27/2020', '5/4/2020', '5/11/2020', '5/18/2020', '5/25/2020'],
         datasets: [
             {//El paso area and Las Cruces, NM(doesn't include Ciudad de Juarez)
                 label: 'El Paso(TX) & Las Cruces(NM) Statistical Area',
                 tension: '.5',
                 borderColor: 'rgb(255, 128, 0)',
-                data: [2, 16, 65, 155, 350, 600, 928, 1199, 1572, 2120]},
+                data: [2, 16, 65, 155, 350, 600, 928, 1199, 1572, 2120, 2541]},
             {//Greater Austin area made up of Travis, Williamson, Hays, & Bastrop counties
                 label: 'Greater Austin Area',
                 tension: '.5',
                 borderColor: 'rgb(254,228,110)',
-                data: [7, 7, 265, 653, 1095, 1434, 1965, 2409, 2817, 3390]},
+                data: [7, 7, 265, 653, 1095, 1434, 1965, 2409, 2817, 3390, 3716]},
             {//Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
                 label: 'Greater Houston Area',
                 tension: '.5',
                 borderColor: 'rgb(46,76,157)',
-                data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742, 11020, 13164]},
+                data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742, 11020, 13164, 14322]},
             {//DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
                 label: 'Dallas Fort Worth Metroplex',
                 tension: '.5',
                 borderColor: 'rgb(3,133,62)',
-                data: [28, 304, 1055, 2370, 3856, 5084, 6949, 9184, 12090, 15232]},
+                data: [28, 304, 1055, 2370, 3856, 5084, 6949, 9184, 12090, 15232, 16678]},
             {// Greater San Antonio Area is Atacosta, Bexar, Bandera, Comal, Guadulupe, Kendall, Medina, & Wilson counties
                 label: 'Greater San Antonio Area',
                 tension: '.5',
                 borderColor: 'rgb(200,0,62)',
-                data: [13, 51, 191, 543, 916, 1179, 1489, 1902, 2174, 2524]}
+                data: [13, 51, 191, 543, 916, 1179, 1489, 1902, 2174, 2524, 2757]}
             ]},
                 options: {
                     scales: {
