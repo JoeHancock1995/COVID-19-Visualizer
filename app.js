@@ -135,7 +135,7 @@ async function chartIt() {
 }
 
 async function getUsData() {
-    const response = await fetch('../covid-19-data/us.csv');
+    const response = await fetch('covid-19-data/us.csv');
     const data = await response.text();
 
     const table = data.split('\n').slice(1);
