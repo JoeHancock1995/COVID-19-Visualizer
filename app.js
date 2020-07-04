@@ -51,12 +51,12 @@ var chart = new Chart(ctx, {
                 label: 'Greater Austin Area',
                 tension: '.5',
                 borderColor: 'rgb(254,228,110)',
-                data: [7, 7, 265, 653, 1095, 1434, 1965, 2409, 2817, 3390, 3716, 4555, 5209, 6857, 9984, 14169]},
+                data: [7, 7, 266, 656, 1101, 1442, 1976, 2430, 2847, 3426, 3766, 4621, 5286, 7004, 10210, 14501]},
             {//Greater Houston area made up of Austin, Brazos, Chambers, Fort Bend, Galveston, Harris, Montgomery, & Waller counties
                 label: 'Greater Houston Area',
                 tension: '.5',
                 borderColor: 'rgb(46,76,157)',
-                data: [26, 164, 894, 2675, 5147, 6679, 8126, 9742, 11020, 13164, 14322, 17002, 19990, 23358, 31391, 41974]},
+                data: [28, 168, 913, 2740, 5273, 6874, 8446, 10144, 11499, 13692, 14862, 17539, 20149, 23848, 32079, 42535]},
             {//DFW metroplex is Dallas, Denton, Tarrant, Collin, Ellis, Hood, Hunt, Johnson, Kaufman, Parker, Rockwall, & Wilson counties 
                 label: 'Dallas Fort Worth Metroplex',
                 tension: '.5',
