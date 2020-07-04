@@ -7,6 +7,12 @@ h1{
     text-align: Left;
     font-size: 44px;
 }
+p{
+    font-family:'NK57MonospaceCdBk-Regular'
+}
+ul{
+    font-family:'NK57MonospaceCdBk-Regular'
+}
 .case-numbers{
     font-family:"DS Crystal";
     line-height: 20px;
